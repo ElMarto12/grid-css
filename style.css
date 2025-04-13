@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: hsl(214, 17%, 92%);
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 13px;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 70%;
+}
+
+.grid-container > div{
+    border-style: none;
+    border-radius: 10px;
+    padding: 2em;
+    grid-template-rows: auto 1fr auto;
+    box-shadow: 20px 17px 36px 0px rgba(0,0,0,0.47);
+}
+
+.card-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-header > img{
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+
+.img-outer-ring-pp{
+    border-style: solid;
+    border-color: hsl(264, 82%, 80%);
+}
+
+.card-article{
+    font-size: x-large;
+    font-weight: 700;
+    margin: 20px 0;
+    font-weight: 600;
+}
+
+.card-1{
+    grid-row: 1;
+    grid-column-start:  1;
+    grid-column-end: 3;
+    background-color: hsl(263, 55%, 52%);
+    background-image: url(/images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: top right 15%;
+    color: hsl(0, 0%, 100%);
+}
+
+.card-2{
+    grid-row: 1;
+    grid-column-start: 3;
+    grid-column-end: 3;
+    background-color: hsl(217, 19%, 35%);
+    color: hsl(214, 17%, 92%);
+}
+
+.card-3{
+    grid-row: 2;
+    grid-column: 1;
+    background-color: hsl(0, 0%, 100%);
+}
+
+.card-4{
+    grid-row: 2;
+    grid-column-start: -4;
+    grid-column-end: -2;
+    background-color: hsl(219, 29%, 14%);
+    color: hsl(0, 0%, 81%);
+}
+
+.card-5{
+    grid-row-start:  1;
+    grid-row-end: 3;
+    background-color: hsl(0, 0%, 100%);
+}
+
+.card-3, .card-5{
+    color: hsl(217, 19%, 35%);
+}
+
+@media (max-width: 1224px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-1, .card-2, .card-3, .card-4, .card-5 {
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
+}
+
+@media (max-width: 800px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
